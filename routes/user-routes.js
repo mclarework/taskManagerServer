@@ -4,6 +4,7 @@ const router = new express.Router();
 const { auth } = require("../middleware/auth");
 
     router.post("/users", async (req, res) => {
+      console.log("test")
         const user = new User(req.body);
         const token = await user.generateAuthToken();
         try {
