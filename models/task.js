@@ -10,7 +10,8 @@ const instances = new mongoose.Schema({
 })
 const taskSchema = new mongoose.Schema({
   task: {
-    type: String
+    type: String,
+    required: true
   },
   status: {
     type: Boolean,
@@ -22,7 +23,8 @@ const taskSchema = new mongoose.Schema({
   },
   runTime: [instances],
   totalTime: {
-      type:Number
+      type:Number,
+      default: 0
   }
 });
 const Task = mongoose.model("Task", taskSchema);

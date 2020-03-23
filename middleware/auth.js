@@ -12,10 +12,11 @@ const auth = async (req, res, next) => {
         }
         req.token = token
         req.user = user
-
+        console.log
         next()
     } catch (error) {
-        escape.status(401).send()
+        console.log(error)
+        res.status(401).send()
     }
 }
 
