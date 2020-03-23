@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const validator = require("validator")
 
 const connection = async () => {
     const uri = "mongodb+srv://mike:mike@groupproject-g8ze5.mongodb.net/GGW?retryWrites=true&w=majority"
@@ -15,5 +16,6 @@ const connection = async () => {
     connection();
 
 module.exports = {
+    validator,
     mongoose
 }

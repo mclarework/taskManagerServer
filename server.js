@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 require("./db/mongoose.js");
 const userRouter = require("./routes/user-routes.js");
+const taskRouter = require("./routes/task-routes")
 
 const app = express();
 const port = process.env.PORT || 3010;
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
 });
 
 app.use(userRouter);
+app.use(taskRouter)
 
 app.listen(port, () => {
   console.log(`server is running on ${port}`);
