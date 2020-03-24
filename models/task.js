@@ -2,10 +2,15 @@ const mongoose = require("mongoose");
 
 const instances = new mongoose.Schema({
     timeStarted: {
-        type:Date
+        type:Number
     },
     timeRan:{
-        type:Number
+        type:Number,
+        default:0
+    },
+    active:{
+      type:Boolean,
+      default:false
     }
 })
 const taskSchema = new mongoose.Schema({

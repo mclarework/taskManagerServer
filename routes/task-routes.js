@@ -57,6 +57,7 @@ router.patch("/tasks/total/:id", auth, async (req, res) => {
   }
 });
 
+//adds individual runs of the timer to an array
 router.patch("/tasks/instance/:id", auth, async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ["timeStarted", "timeRan"];
