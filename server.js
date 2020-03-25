@@ -10,7 +10,7 @@ const port = process.env.PORT || 3010;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Methods", "PATCH")
+  res.header("Access-Control-Allow-Methods", "PATCH, DELETE")
   res.header("Access-Control-Allow-Origin", `*`);
   res.header(
     "Access-Control-Allow-Headers",
