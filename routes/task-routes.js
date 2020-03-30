@@ -32,12 +32,17 @@ router.get("/tasks", auth, async (req, res) => {
 router.patch("/tasks/:id", auth, async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdates = ["status"];
-  const isValidOperation = updates.every(update => allowedUpdates.includes(update));
+  const isValidOperation = updates.every(update =>
+    allowedUpdates.includes(update)
+  );
   if (!isValidOperation) {
     return res.status(400).send({ error: "Invalid update" });
   }
   try {
-    const task = await Task.findOne({ _id: req.params.id, owner: req.user._id });
+    const task = await Task.findOne({
+      _id: req.params.id,
+      owner: req.user._id
+    });
     updates.forEach(update => (task[update] = req.body[update]));
 
     await task.save();

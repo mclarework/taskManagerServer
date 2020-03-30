@@ -31,7 +31,7 @@ router.post("/users/login", async (req, res) => {
     });
   } catch (error) {
     res.send({
-      loggedIn: false,
+      loggedIn: false
     });
   }
 });

@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
 
 const instances = new mongoose.Schema({
-    timeStarted: {
-        type:Number
-    },
-    timeRan:{
-        type:Number,
-        default:0
-    },
-    active:{
-      type:Boolean,
-      default:false
-    }
-})
+  timeStarted: {
+    type: Number
+  },
+  timeRan: {
+    type: Number,
+    default: 0
+  },
+  active: {
+    type: Boolean,
+    default: false
+  }
+});
 const taskSchema = new mongoose.Schema({
   task: {
     type: String,
@@ -28,12 +28,12 @@ const taskSchema = new mongoose.Schema({
   },
   runTime: [instances],
   totalTime: {
-      type:Number,
-      default: 0
+    type: Number,
+    default: 0
   }
 });
 const Task = mongoose.model("Task", taskSchema);
-const Instance = mongoose.model("Instance",instances)
+const Instance = mongoose.model("Instance", instances);
 
 module.exports = {
   Task,
